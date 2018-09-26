@@ -24,34 +24,32 @@ function uniqueLetters(words)
 
 }
 
-console.log(uniqueLetters("sata cable"));
+
 
 function countChar(words)
 {
   var noSpaces1 = words.split(" ").join("");
   var noSpaces2 = noSpaces1;
-  var charCount = [];
+  
+  var  charOutput = [];
   for(var j = 0; j < uniqueLetters(words).length; j++)
 	{
+		var charIndices = [];
 		var count = 0;
 		
-		for(var k = 0; k < noSpaces2.length; k++)
+		for(var k = 0; k < words.length; k++)
 		{
-			if(noSpaces1[k] === uniqueLetters(words)[j])
+			if(words[k] === uniqueLetters(words)[j])
 			{
-				count += 1;
-
+				charIndices.push(k);	
 			}	
-		}
-		
-
-		charCount.push(count);
-		
+		}	
+		charOutput.push(charIndices);		
 	}
-return charCount
+	return charOutput;
 }
 
-console.log(countChar("sata cable"));
+
 
 function zip(keys, values) {
   var output = {};
@@ -68,4 +66,6 @@ function countingCharacters(words) {
 	return zipper;
 }
 
-console.log(countingCharacters("sata cable"));
+console.log(countingCharacters("lighthouse in the house"));
+
+

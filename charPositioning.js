@@ -30,25 +30,23 @@ function countChar(words)
 {
   var noSpaces1 = words.split(" ").join("");
   var noSpaces2 = noSpaces1;
-  var charCount = [];
+  
+  var  charOutput = [];
   for(var j = 0; j < uniqueLetters(words).length; j++)
 	{
+		var charIndices = [];
 		var count = 0;
 		
-		for(var k = 0; k < noSpaces2.length; k++)
+		for(var k = 0; k < words.length; k++)
 		{
-			if(noSpaces1[k] === uniqueLetters(words)[j])
+			if(words[k] === uniqueLetters(words)[j])
 			{
-				count += 1;
-
+				charIndices.push(k);	
 			}	
-		}
-		
-
-		charCount.push(count);
-		
+		}	
+		charOutput.push(charIndices);		
 	}
-return charCount
+	return charOutput;
 }
 
 
@@ -69,4 +67,3 @@ function countingCharacters(words) {
 }
 
 console.log(countingCharacters("lighthouse in the house"));
-
