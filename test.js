@@ -37,7 +37,7 @@ function countChar(words)
 		var charIndices = [];
 		var count = 0;
 		
-		for(var k = 0; k < words.length; k++)
+		for(var k = 1; k < words.length; k++)
 		{
 			if(words[k] === uniqueLetters(words)[j])
 			{
